@@ -1463,7 +1463,7 @@ class MultiCommand(Command):
                 rows.append((subcommand, help))
 
             if rows:
-                with formatter.section("Commands"):
+                with formatter.section(self.get_short_help_str(limit) or "Commands"):
                     formatter.write_dl(rows)
 
     def parse_args(self, ctx, args):
